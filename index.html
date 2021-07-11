@@ -4,14 +4,62 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://kit.fontawesome.com/0069c24e64.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="/src/styles/index.css" />
+    <script defer type="module" src="/src/scripts/index.js"></script>
     <title>Vite App</title>
   </head>
   <body>
-    <header>
-      <h1>Hello World</h1>
-    </header>
-    <div id="app"></div>
+    <div id="app">
+      <div id="container">
+        <header>
+          <img
+            id="app_logo"
+            src="https://rickandmortyapi.com/api/character/avatar/19.jpeg"
+            alt="Character Avatar Image"
+            class="m-1"
+          />
+
+          <div class="filter-area d-flex-column">
+            <div class="d-flex-row">
+              <select
+                id="character-live-status-filter"
+                class="character-filter form-control"
+                name="status"
+              >
+                <option select value="">-- all statuses --</option>
+                <option value="Alive">Alive</option>
+                <option value="Dead">Dead</option>
+                <option value="Unknown">Unknown</option>
+              </select>
+              <select
+                id="character-live-species-filter"
+                class="character-filter form-control"
+                name="species"
+              >
+                <option select value="">-- all species --</option>
+                <option value="Human">Human</option>
+                <option value="Alien">Alien</option>
+              </select>
+            </div>
+            <input
+              type="text"
+              id="character-live-search"
+              class="character-filter form-control"
+              name="name"
+              placeholder="Character name"
+            />
+          </div>
+          <button class="btn green rounded load-data-btn">Load Data</button>
+        </header>
+        <main></main>
+        <footer><p>Made with love by Christian Daum</p></footer>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
